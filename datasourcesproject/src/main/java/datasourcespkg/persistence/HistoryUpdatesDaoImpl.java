@@ -73,8 +73,8 @@ public class HistoryUpdatesDaoImpl implements HistoryUpdatesDao {
     @Override
     public List<HistoryUpdates> getAllCurrentHistoryUpdates() {
         Sql2o sql2o = DBConnection.getDb();
-        String sql = "SELECT * from historyupdates where historyupdatesid in " +
-                           "(SELECT max(historyupdatesid) from historyupdates group by datasourceid) ";
+        String sql = "SELECT * FROM HistoryUpdates where historyUpdatesId IN " +
+                           "(SELECT max(historyUpdatesId) from HistoryUpdates GROUP BY dataSourceId)";
         System.out.println("getDataSourceById sql=" + sql);
         try (Connection con = sql2o.open()) {
             return con.createQuery(sql)
