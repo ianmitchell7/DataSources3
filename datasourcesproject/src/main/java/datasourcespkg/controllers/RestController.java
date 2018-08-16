@@ -21,6 +21,8 @@ public class RestController {
 
     public RestController() {
 
+        port(8897);
+
         before("*", (request, response)-> {
 
             response.header("Access-Control-Allow-Headers", "Content-Type, Content-Range, Content-Disposition, Content-Description");

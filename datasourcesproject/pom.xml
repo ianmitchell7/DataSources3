@@ -59,7 +59,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>no.earlywarning.Application</mainClass>
+                            <mainClass>datasourcespkg.Application</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
