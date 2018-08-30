@@ -18,8 +18,7 @@ public class DataSourcesDaoImpl implements DataSourcesDao {
     public List<DataSource> getAllDataSources() {
         Sql2o sql2o = DBConnection.getDb();
         String sql = "SELECT * FROM DataSources " +
-                     "WHERE deactivated IS NULL OR deactivated = '' " +
-                     "ORDER BY nextUpdateLatest ASC, dataSourcename ASC ";
+                     "ORDER BY nextUpdateLatest ASC, dataSourcename ASC";
         System.out.println("getDataSourceById sql=" + sql) ;
         try(Connection con = sql2o.open()) {
             return con.createQuery(sql)
@@ -81,8 +80,7 @@ public class DataSourcesDaoImpl implements DataSourcesDao {
         String sql = "SELECT  DataSources.dataSourceId, DataSources.dataSourceName, DataSources.url, DataSources.sourceType, DataSources.updateInterval, DataSources.nextUpdateEarliest, DataSources.nextUpdateLatest, DataSources.latestUpdate, DataSources.transferredToMaster, DataSources.comments, DataSources.parentId, DataSources.updateMethod, DataSources.processedUpdate, DataSources.commentsUpdate, DataSources.dependancyBrotherId, DataSources.dependancySisterId, DataSources.deactivated, DataSources.ewController, DataSources.wacheteUrl " +
                      "FROM PortalSources " +
                      "INNER JOIN DataSources ON PortalSources.dataSourceId=DataSources.dataSourceId " +
-        //             "WHERE PortalSources.portalId = :portalId AND deactivated = '' ";
-            "WHERE PortalSources.portalId = :portalId AND (deactivated = '' OR deactivated IS NULL) ";
+                     "WHERE PortalSources.portalId = :portalId ";
         System.out.println("getDataSourcesForPortal sql = " + sql);
         try(Connection con = sql2o.open()) {
             return con.createQuery(sql)
@@ -129,7 +127,7 @@ public class DataSourcesDaoImpl implements DataSourcesDao {
                 "SET dataSourceName = :dataSourceName, url = :url, sourceType = :sourceType, updateInterval = :updateInterval, nextUpdateLatest = :nextUpdateLatest, " +
                       "latestUpdate = :latestUpdate, transferredToMaster = :transferredToMaster, comments = :comments, parentId = :parentId, " +
                       "updateMethod = :updateMethod, processedUpdate = :processedUpdate, commentsUpdate = :commentsUpdate, dependancyBrotherId = :dependancyBrotherId, " +
-                      "dependancySisterId = :dependancySisterId, deactivated = :deactivated, ewControllerId = :ewControllerId, wacheteUrl = :wacheteUrl " +
+                      "dependancySisterId = :dependancySisterId, ewControllerId = :ewControllerId, wacheteUrl = :wacheteUrl " +
                 "WHERE dataSourceId = :dataSourceId";
         System.out.printf("SET sql = " + sql);
         //System.out.printf("dataSource = " + dataSource);

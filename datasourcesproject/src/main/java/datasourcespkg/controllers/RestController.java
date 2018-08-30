@@ -1,5 +1,11 @@
 package datasourcespkg.controllers;
+//dataSource.url=jdbc:mysql://localhost:8889/EarlySources
+//dataSource.user=root
+//dataSource.password=root
 
+//dataSource.url=jdbc:mysql://cat.businessmonitor.no:3306/EarlySources
+//dataSource.user=bm_master
+//dataSource.password=1234early
 import com.google.gson.Gson;
 import datasourcespkg.persistence.*;
 import datasourcespkg.domain.DataSource;
@@ -21,7 +27,7 @@ public class RestController {
 
     public RestController() {
 
-        port(8897);
+        port(8887);
 
         before("*", (request, response)-> {
 

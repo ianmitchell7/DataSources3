@@ -5,9 +5,9 @@ public class DataSource {
     private Long dataSourceId;
     private String dataSourceName;
     private String url;
-    private String sourceType;
-    private String updateInterval;
-    private String updateMethod;
+    private int sourceType;
+    private int updateInterval;
+    private int updateMethod;
     private String nextUpdateEarliest;
     private String nextUpdateLatest;
     private String latestUpdate;
@@ -16,9 +16,9 @@ public class DataSource {
     private Long   parentId;
     private String processedUpdate;
     private String commentsUpdate;
-    private String dependancyBrotherId;
-    private String dependancySisterId;
-    private String deactivated;
+    private Integer dependancyBrotherId = null;
+    private Integer dependancySisterId = null;
+    private Integer deactivated = null;
     private String ewControllerId;
     private String wacheteUrl;
 
@@ -26,7 +26,7 @@ public class DataSource {
     public DataSource() {
     }
 
-    public DataSource(Long dataSourceId, String dataSourceName, String url, String sourceType, String updateInterval, String nextUpdate, String transferredToMaster, String comments, Long parentId, String updateMethod, String processedUpdate, String commentsUpdate, String dependancyBrotherId, String dependancySisterId, String deactivated, String ewControllerId, String wacheteUrl) {
+    public DataSource(Long dataSourceId, String dataSourceName, String url, int sourceType, int updateInterval, String nextUpdate, String transferredToMaster, String comments, Long parentId, int updateMethod, String processedUpdate, String commentsUpdate, Integer dependancyBrotherId, Integer dependancySisterId, Integer deactivated, String ewControllerId, String wacheteUrl) {
         this.dataSourceId        = dataSourceId;
         this.dataSourceName      = dataSourceName;
         this.url                 = url;
@@ -60,15 +60,15 @@ public class DataSource {
         return url;
     }
 
-    public String getSourceType() {
+    public int getSourceType() {
         return sourceType;
     }
 
-    public String getUpdateInterval() {
+    public int getUpdateInterval() {
         return updateInterval;
     }
 
-    public String getUpdateMethod() {
+    public int getUpdateMethod() {
         return updateMethod;
     }
 
@@ -102,15 +102,15 @@ public class DataSource {
         return commentsUpdate;
     }
 
-    public String getDependancyBrotherId() {
+    public Integer getDependancyBrotherId() {
         return dependancyBrotherId;
     }
 
-    public String getDependancySisterId() {
+    public Integer getDependancySisterId() {
         return dependancySisterId;
     }
 
-    public String getDeactivated() {
+    public Integer getDeactivated() {
         return deactivated;
     }
 
@@ -135,15 +135,15 @@ public class DataSource {
         this.url = url;
     }
 
-    public void setSourceType(String sourceType) {
+    public void setSourceType(int sourceType) {
         this.sourceType = sourceType;
     }
 
-    public void setUpdateInterval(String updateInterval) {
+    public void setUpdateInterval(int updateInterval) {
         this.updateInterval = updateInterval;
     }
 
-    public void setUpdateMethod(String updateMethod) {
+    public void setUpdateMethod(int updateMethod) {
         this.updateMethod = updateMethod;
     }
 
@@ -179,15 +179,15 @@ public class DataSource {
         this.commentsUpdate = commentsUpdate;
     }
 
-    public void setDependancyBrotherId(String dependancyBrotherId) {
+    public void setDependancyBrotherId(Integer dependancyBrotherId) {
         this.dependancyBrotherId = dependancyBrotherId;
     }
 
-    public void setDependancySisterId(String dependancySisterId) {
+    public void setDependancySisterId(Integer dependancySisterId) {
         this.dependancySisterId = dependancySisterId;
     }
 
-    public void setDeactivated(String deactivated) {
+    public void setDeactivated(Integer deactivated) {
         this.deactivated = deactivated;
     }
 
