@@ -1,5 +1,5 @@
 package datasourcespkg.controllers;
-// Hikari setup
+// Hikari setup...
 //dataSource.url=jdbc:mysql://localhost:8889/EarlySources
 //dataSource.user=root
 //dataSource.password=root
