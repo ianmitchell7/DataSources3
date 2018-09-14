@@ -29,8 +29,7 @@ public class RestController {
 
     public RestController() {
 
-        //port(8897);   //local
-        port(8887); //
+        port(8897);
 
         before("*", (request, response)-> {
 
